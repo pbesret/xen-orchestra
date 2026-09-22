@@ -20,6 +20,7 @@
 - [REST API] Keep collection events ordered per object (PR [#10446](https://github.com/vatesfr/xen-orchestra/pull/10446))
 - [REST API] Wait for the XAPI objects before making a server connected (PR [#10446](https://github.com/vatesfr/xen-orchestra/pull/10446))
 - [REST API] Do not record an server error when a connection attempt is aborted (PR [#10446](https://github.com/vatesfr/xen-orchestra/pull/10446))
+- [xo-server-sdn-controller] Fix events listening and stale objects on server reconnection (PR [#10440](https://github.com/vatesfr/xen-orchestra/pull/10440)))
 
 ### Packages to release
 
@@ -42,5 +43,6 @@
 - @xen-orchestra/rest-api patch
 - xen-api patch
 - xo-server minor
+- xo-server-sdn-controller patch
 
 <!--packages-end-->
