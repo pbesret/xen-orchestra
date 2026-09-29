@@ -113,8 +113,8 @@
 import { useXoBackupRepositoryTypeLabel } from '@/modules/backup-repository/composables/use-xo-backup-repository-type-label.composable.ts'
 import { NFS_DEFAULT_PORT } from '@/modules/backup-repository/form/details/use-nfs-backup-repository-details-form.ts'
 import { SMB_DEFAULT_DOMAIN } from '@/modules/backup-repository/form/details/use-smb-backup-repository-details-form.ts'
+import type { BackupRepositoryDetailsForms } from '@/modules/backup-repository/form/use-backup-repository-details-forms.ts'
 import type { BackupRepositoryGeneralForm } from '@/modules/backup-repository/form/use-backup-repository-general-form.ts'
-import type { NewBackupRepositoryDetailsForms } from '@/modules/backup-repository/form/use-new-backup-repository-form.ts'
 import { MASKED_SECRET } from '@/modules/backup-repository/utils/xo-backup-repository.util.ts'
 import { useXoProxyCollection } from '@/modules/proxy/remote-resources/use-xo-proxy-collection.ts'
 import VtsIcon from '@core/components/icon/VtsIcon.vue'
@@ -128,7 +128,7 @@ import { useI18n } from 'vue-i18n'
 
 const { general, details } = defineProps<{
   general: BackupRepositoryGeneralForm
-  details: NewBackupRepositoryDetailsForms
+  details: BackupRepositoryDetailsForms
   detailsTitle: string
 }>()
 
