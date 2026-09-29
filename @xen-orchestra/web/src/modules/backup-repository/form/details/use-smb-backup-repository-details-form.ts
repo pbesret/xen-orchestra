@@ -18,10 +18,12 @@ const INITIAL_FORM_DATA = {
   customOptions: '',
 }
 
-export function useSmbBackupRepositoryDetailsForm() {
+export type SmbBackupRepositoryDetailsFormData = typeof INITIAL_FORM_DATA
+
+export function useSmbBackupRepositoryDetailsForm(initialData?: Partial<SmbBackupRepositoryDetailsFormData>) {
   const { t } = useI18n()
 
-  const formData = reactive({ ...INITIAL_FORM_DATA })
+  const formData = reactive({ ...INITIAL_FORM_DATA, ...initialData })
 
   const {
     useField,

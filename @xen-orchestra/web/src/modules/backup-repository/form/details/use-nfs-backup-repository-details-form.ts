@@ -15,10 +15,12 @@ const INITIAL_FORM_DATA = {
   customOptions: '',
 }
 
-export function useNfsBackupRepositoryDetailsForm() {
+export type NfsBackupRepositoryDetailsFormData = typeof INITIAL_FORM_DATA
+
+export function useNfsBackupRepositoryDetailsForm(initialData?: Partial<NfsBackupRepositoryDetailsFormData>) {
   const { t } = useI18n()
 
-  const formData = reactive({ ...INITIAL_FORM_DATA })
+  const formData = reactive({ ...INITIAL_FORM_DATA, ...initialData })
 
   const {
     useField,

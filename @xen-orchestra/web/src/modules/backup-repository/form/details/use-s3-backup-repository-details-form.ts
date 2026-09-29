@@ -18,10 +18,12 @@ const INITIAL_FORM_DATA = {
   pathInBucket: '',
 }
 
-export function useS3BackupRepositoryDetailsForm() {
+export type S3BackupRepositoryDetailsFormData = typeof INITIAL_FORM_DATA
+
+export function useS3BackupRepositoryDetailsForm(initialData?: Partial<S3BackupRepositoryDetailsFormData>) {
   const { t } = useI18n()
 
-  const formData = reactive({ ...INITIAL_FORM_DATA })
+  const formData = reactive({ ...INITIAL_FORM_DATA, ...initialData })
 
   const {
     useField,

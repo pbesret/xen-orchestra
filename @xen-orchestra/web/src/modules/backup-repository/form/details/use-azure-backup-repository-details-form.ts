@@ -18,12 +18,17 @@ const INITIAL_FORM_DATA = {
   pathInContainer: '',
 }
 
-export function useAzureBackupRepositoryDetailsForm(rawType: MaybeRefOrGetter<BackupRepositoryType | undefined>) {
+export type AzureBackupRepositoryDetailsFormData = typeof INITIAL_FORM_DATA
+
+export function useAzureBackupRepositoryDetailsForm(
+  rawType: MaybeRefOrGetter<BackupRepositoryType | undefined>,
+  initialData?: Partial<AzureBackupRepositoryDetailsFormData>
+) {
   const { t } = useI18n()
 
   const type = toComputed(rawType)
 
-  const formData = reactive({ ...INITIAL_FORM_DATA })
+  const formData = reactive({ ...INITIAL_FORM_DATA, ...initialData })
 
   const {
     useField,
